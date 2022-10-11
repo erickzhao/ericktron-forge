@@ -44,19 +44,17 @@
       ],
       "plugins": [
         [
-          "@electron-forge/plugin-webpack",
+          "./src/plugin-webpack/dist/WebpackPlugin.js",
           {
             "mainConfig": "./webpack.main.config.js",
             "renderer": {
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
+              ],
+              "preloadEntries": [
                 {
-                  "html": "./src/index.html",
-                  "js": "./src/renderer.ts",
-                  "name": "main_window",
-                  "preload": {
-                    "js": "./src/preload.ts"
-                  }
+                  "name": "erick",
+                  "js": "./src/preload.ts"
                 }
               ]
             }
