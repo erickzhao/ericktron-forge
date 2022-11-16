@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   packagerConfig: {},
   rebuildConfig: {},
@@ -19,4 +21,15 @@ module.exports = {
       config: {},
     },
   ],
-};
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'erickzhao',
+          name: 'ericktron-forge',
+        },
+      },
+    },
+  ],
+}
